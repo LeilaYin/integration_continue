@@ -10,17 +10,14 @@ Created on Thu Jan  9 14:46:18 2020
 from tkinter import *
 from calculatrice import *
 
-
 # create window
 window = Tk()
 window.title("Calculatrice")
 
+def callback():
+    btn.configure(text="click")
+    
+btn = Button(window, text="ok", command=callback)
+btn.pack()
 
-value = StringVar()
-Label(window, textvariable=value, width=30).pack()
-value.set("texte par défaut")
-
-#Button
-button = Button(window, text="change", command=value.set('texte'))
-button.pack()
 window.mainloop()
